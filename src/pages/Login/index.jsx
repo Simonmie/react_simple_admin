@@ -1,8 +1,23 @@
 // Desc: 登录页面
 import { Card, Form, Input, Button, Checkbox } from 'antd'
+import { fetchLogin } from '../../store/modules/user'
 import './index.scss'
-
+import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+import { message } from 'antd'
 const Login = () => {
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+  const onFinish = async (values) => {
+    console.log('Success:', values)
+    // 触发登录
+    await dispatch(fetchLogin(values))
+    // 跳转到首页
+    navigate('/')
+    // 发出提示
+    message.success('登录成功')
+  }
+
   return (
     <div className="login">
       <Card className="login-container">
@@ -10,7 +25,7 @@ const Login = () => {
           <h1>React-Simple-Admin</h1>
         </div>
         {/* 登录表单 */}
-        <Form>
+        <Form onFinish={onFinish} validateTrigger="onBlur">
           <Form.Item
             name="mobile"
             rules={[
