@@ -1,0 +1,57 @@
+.ant-layout {
+  height: 100%;
+  
+}
+
+.header {
+  padding: 0;
+  background-color: #fff;
+}
+
+.title {
+  width: 200px;
+  height: 60px;
+  h3 {
+    margin: 0 auto;
+    line-height: 60px;
+    height: 60px;
+    width: 170px;
+  }
+}
+
+.layout-content {
+  overflow-y: auto;
+  
+}
+
+.user-info {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding-right: 20px;
+  color: #000;
+  
+  .user-name {
+    margin-right: 20px;
+  }
+  
+  .user-logout {
+    display: inline-block;
+    cursor: pointer;
+  }
+}
+.ant-layout-header {
+  padding: 0 !important;
+}
+
+.ant-menu{
+  background-color: #fff;
+
+  .ant-menu-item {
+    color: #000 !important;  // 添加 !important 确保样式生效
+    
+    &.ant-menu-item-selected {
+      color: #1890ff !important;
+    }
+  }
+}
